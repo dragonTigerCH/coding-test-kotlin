@@ -12,6 +12,7 @@ class Solution {
         val answer = mutableListOf<Int>()
         var maxDay = taskDays[0]
         var count = 0
+        println(taskDays)
         
         for (day in taskDays) {
             if (day <= maxDay) {
