@@ -1,12 +1,11 @@
 class Solution {
     fun solution(citations: IntArray): Int {
-        val sortedCitations = citations.sortedDescending()
-        
-        for (i in sortedCitations.indices) {
-            if (sortedCitations[i] <= i) {
-                return i
-            }
+        for (x in 1..citations.size) {
+            val answer = citations.filter { x <= it }.size
+            val remain = citations.size - answer
+            if (x >= answer && remain <= answer)
+                return answer
         }
-        return sortedCitations.size
+        return 0
     }
 }
